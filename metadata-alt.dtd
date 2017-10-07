@@ -1,0 +1,21 @@
+<!ELEMENT pkgmetadata (upstream|patches)>
+  <!ELEMENT patches (patch+)>
+    <!ELEMENT patch (#PCDATA)>
+      <!ATTLIST patch status (gentoo-specific|upstream-accepted|upstream-pending) #REQUIRED>
+  <!ELEMENT upstream (remote-id+|(version-check|no-versioning)|normalize)>
+    <!ELEMENT no-versioning EMPTY>
+    <!ELEMENT normalize (rule+)>
+      <!ATTLIST normalize type (github) #REQUIRED>
+      <!ELEMENT rule (replace,with)>
+        <!ELEMENT replace (#PCDATA)>
+	<!ELEMENT with (#PCDATA)>
+    <!ELEMENT remote-id (#PCDATA)>
+      <!ATTLIST remote-id type (gitlab) #REQUIRED>
+      <!ATTLIST remote-id url CDATA #REQUIRED>
+    <!ELEMENT version-check (try+)>
+      <!ATTLIST version-check type (soup) #REQUIRED>
+      <!ELEMENT try (regexp+)>
+        <!ATTLIST try url CDATA #REQUIRED>
+	<!ELEMENT regexp (#PCDATA)>
+          <!ATTLIST regexp attr CDATA #IMPLIED>
+          <!ATTLIST regexp tag CDATA #REQUIRED>

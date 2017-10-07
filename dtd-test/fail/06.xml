@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "metadata-alt.dtd">
+<pkgmetadata>
+	<upstream>
+		<version-check type="soup">
+			<try url="">
+			</try>
+		</version-check>
+	</upstream>
+</pkgmetadata>
